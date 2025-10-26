@@ -1,0 +1,24 @@
+{
+    "correct": [
+        "✅ You nailed it! Luck’s on your side today 🍀💰",
+        "🎉 Victory! Your guess was spot on — enjoy the winnings! 🤑",
+        "🥳 Winner! The dice danced to your tune. 🎲✨",
+        "💸 Cash in! You guessed right and doubled down like a pro 💼💵",
+        "🌟 High roller vibes! You're making it look easy 🎰"
+    ],
+    "incorrect": [
+        "❌ Ouch! The dice had other plans this time 😬🎲",
+        "💸 You lost... but the thrill is priceless, right? 😉 Try again! 🔁",
+        "🥀 Missed it! Better luck next roll — the house wins this round 🏚️",
+        "😓 So close! But the dice weren’t on your side this time 🎲💔",
+        "📉 Loss registered. Coins gone, but courage remains 💪💰"
+    ],
+    "triple_ones": [
+        "☠️ Triple Snake Eyes! The dice conspired against you... You lose instantly. 🐍🎲",
+        "🧊 Coldest Roll Possible! 1 + 1 + 1 = Pure despair. Say bye to your money. ❄️"
+    ],
+    "triple_sixes": [
+        "🔥 The Devil’s Roll! 6 + 6 + 6... You lose automatically. 😈🎲",
+        "🧨 Too Hot to Handle! TRIPLE SIXES just blew up your bet 💥💸"
+    ]
+}

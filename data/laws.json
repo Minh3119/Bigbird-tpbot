@@ -1,0 +1,392 @@
+[
+    {
+        "sentence": "All members shall work properly, ____ and put in effort so that work does not stagnate, ensure timely and accurate information updates.",
+        "correct": "honestly",
+        "options": ["honestly","corruptly","lazily","quickly"]
+    },
+    {
+        "sentence": "All members must be incorrupt, protect their own reputation and the ____'s.",
+        "correct": "organisation",
+        "options": ["organisation","individual","community","government"]
+    },
+    {
+        "sentence": "All members must comply with all official ____ of the Organisation.",
+        "correct": "documents",
+        "options": ["documents","records","employees","believes"]
+    },
+    {
+        "sentence": "All diplomatic activities with other organisations must be ____.",
+        "correct": "public",
+        "options": ["public","secret","confidential","private"]
+    },
+    {
+        "sentence": "The organisation must ensure that ____ democracy does not occur.",
+        "correct": "absolute",
+        "options": ["absolute","partial","limited","representative"]
+    },
+    {
+        "sentence": "Units shall not stop working on holidays unless permitted by organisational ____.",
+        "correct": "documents",
+        "options": ["documents","rules","leaders","elections"]
+    },
+    {
+        "sentence": "The official demonym is ____.",
+        "correct": "absolute",
+        "options": ["Traophs","Traophese","Traophians","Traophites"]
+    },
+    {
+        "sentence": "Expanding democracy goes hand in hand with enforcement discipline, rule of law, and ____ for differences.",
+        "correct": "respect",
+        "options": ["respect","encourage","advocate","search"]
+    },
+    {
+        "sentence": "Ghost administrative division is an administrative division not being occupied for at least 1 ____.",
+        "correct": "year",
+        "options": ["year","month","week","day"]
+    },
+    {
+        "sentence": "A landslide victory is a victory with ____ percentage or more of all the votes.",
+        "correct": "90",
+        "options": ["90","85","100","95"]
+    },
+    {
+        "sentence": "The General Secretary has the final authority over every official document, ____ adopted by the Semblæ.",
+        "correct": "unless",
+        "options": ["unless","including","either","except"]
+    },
+    {
+        "sentence": "No nondisclosure documents are allowed, except the ____'s.",
+        "correct": "army",
+        "options": ["army","government","leader","Semblæ"]
+    },
+    {
+        "sentence": "Members of The Secretariats must be born in the territory of the ____ Republic of Vietnam.",
+        "correct": "Socialist",
+        "options": ["Socialist","Democratic","Free","Communist"]
+    },
+    {
+        "sentence": "The ____ has the right to hold inter-organisational elections.",
+        "correct": "House",
+        "options": ["House","Semblæ","Secretariats","Agora"]
+    },
+    {
+        "sentence": "The House shall only hold an election session when it's approved by members of the House (who are citizens of The ____) using the MAJ voting method.",
+        "correct": "Secretariats",
+        "options": ["Secretariats","Agora","Semblæ","House"]
+    },
+    {
+        "sentence": "____ members are subject to inspection and supervision by the organisation.",
+        "correct": "All",
+        "options": ["All","Some","Certain","Many"]
+    },
+    {
+        "sentence": "The levels performing inspection and supervision tasks must ____ with official documents and direct instructions from the organisation.",
+        "correct": "comply",
+        "options": ["comply","follow","obey","conflict"]
+    },
+    {
+        "sentence": "Each province needs at least ____ people to remain in existence.",
+        "correct": "two",
+        "options": ["one","two","three","four"]
+    },
+    {
+        "sentence": "One person can only be a citizen of ____ province.",
+        "correct": "one",
+        "options": ["one","two","three","four"]
+    },
+    {
+        "sentence": "In the event that a province has a population of one, at least one additional individual must join within ten days for the province to remain in ____.",
+        "correct": "existence",
+        "options": ["existence","order","lockdown","activity"]
+    },
+    {
+        "sentence": "Official documents may or may not include the names of the branches or divisions of the ____.",
+        "correct": "Treasury",
+        "options": ["Treasury","House","Secretariats","Semblæ"]
+    },
+    {
+        "sentence": "____ on Discord is automatically considered a member of the organisation.",
+        "correct": "Anyone",
+        "options": ["Anyone","Officials","Somebody","Nobody"]
+    },
+    {
+        "sentence": "All Discord accounts except APPs are eligible to ____.",
+        "correct": "vote",
+        "options": ["vote","work","play","join"]
+    },
+    {
+        "sentence": "It is prohibited to persuade others to follow a ____ in any form.",
+        "correct": "religion",
+        "options": ["religion","opinion","lifestyle","culture"]
+    },
+    {
+        "sentence": "When the General Secretary or General Secretary 2 has a surgery, no one will have the position nor its power ____ a new notification is issued.",
+        "correct": "until",
+        "options": ["until","after","when","during"]
+    },
+    {
+        "sentence": "Face-to-face meetings for businesses are prohibited when a ____ occurs in that place.",
+        "correct": "pandemic",
+        "options": ["pandemic","holiday","war","virus"]
+    },
+    {
+        "sentence": "The Semblæ has the right to lift a ban on \"face-to-face meetings for businesses\" if it reaches a two-____ approval vote.",
+        "correct": "thirds",
+        "options": ["thirds","quarters","halves","fifths"]
+    },
+    {
+        "sentence": "The ____ is adopted indefinitely unless the General Secretary wants to stop using it.",
+        "correct": "Charter",
+        "options": ["Charter","Law","Decision","Document"]
+    },
+    {
+        "sentence": "Every ____ of holding any positions in the organisation is voted in the Semblæ.",
+        "correct": "prohibition",
+        "options": ["prohibition","permission","ability","right"]
+    },
+    {
+        "sentence": "____ social security program has a deadline, output standards, and impact index; must be publicly evaluated and consulted with beneficiaries.",
+        "correct": "Every",
+        "options": ["Every","Some","Certain","Many"]
+    },
+    {
+        "sentence": "\"Charteral crisis\" is when the General Secretary defies the ____ Court's ruling.",
+        "correct": "Supreme",
+        "options": ["Supreme","Economy","District","Local"]
+    },
+    {
+        "sentence": "The organisation ____ every gender.",
+        "correct": "recognises",
+        "options": ["recognises","ignores","rejects","discriminates"]
+    },
+    {
+        "sentence": "The organisation can only organise ____ Day by Semblæ Election.",
+        "correct": "Memorial",
+        "options": ["Memorial","Mourning","Independence","Funeral"]
+    },
+    {
+        "sentence": "Passed documents will take effect ____ after being passed unless stated otherwise.",
+        "correct": "right",
+        "options": ["right","slowly","quickly","later"]
+    },
+    {
+        "sentence": "Every referendum must last from ____ to 14 days.",
+        "correct": "3",
+        "options": ["3","1","7","10"]
+    },
+    {
+        "sentence": "On Discord, ____ agencies are only permitted to post information in the \"news\" channel.",
+        "correct": "news",
+        "options": ["news","government","official","public"]
+    },
+    {
+        "sentence": "\"Information\" and \"Declaration of the State of Emergency\" documents are ____ by the General Secretary 2 after five days.",
+        "correct": "deleted",
+        "options": ["deleted","approved","voted","passed"]
+    },
+    {
+        "sentence": "All documents shall be composed ____.",
+        "correct": "online",
+        "options": ["online","offline","manually","digitally"]
+    },
+    {
+        "sentence": "The Secretariats has the final say on determining what represents the entire organisation and ____.",
+        "correct": "where",
+        "options": ["where","when","how","why"]
+    },
+    {
+        "sentence": "If the organisation's first General Secretary ____ away without transferring power or making a decision, and The Secretariats fails to reach a consensus of at least 2 out of 3 discussion rounds, each lasting 3 to 7 days, the organisation shall be dissolved.",
+        "correct": "passes",
+        "options": ["passes","dies","throws","sends"]
+    },
+    {
+        "sentence": "Do not ____ or distort information related to the organisation.",
+        "correct": "sabotage",
+        "options": ["sabotage","sus","among","us"]
+    },
+    {
+        "sentence": "Only organise town halls on mentimeter.com, and at max ____ per month.",
+        "correct": "1",
+        "options": ["1","2","3","4"]
+    },
+    {
+        "sentence": "All Semblæ ____ are allowed to organise town halls.",
+        "correct": "representatives",
+        "options": ["representatives","speakers","officials","leaders"]
+    },
+    {
+        "sentence": "Units that have ____ representation in the Semblæ will be voted to be allowed to organise town halls in the Semblæ separately.",
+        "correct": "no",
+        "options": ["no","some","full","partial"]
+    },
+    {
+        "sentence": "Sexual relations with ____ are prohibited.",
+        "correct": "animals",
+        "options": ["animals","humans","members","officials"]
+    },
+    {
+        "sentence": "When a person has sexual relations with animals, their actions shall be spread ____.",
+        "correct": "everywhere",
+        "options": ["everywhere","nowhere","somewhere","butter"]
+    },
+    {
+        "sentence": "Only images ____ to public decency shall be used in discussions within the organisation's official workplaces.",
+        "correct": "appropriate",
+        "options": ["appropriate","inappropriate","irrelevant","correct"]
+    },
+    {
+        "sentence": "The ____ of sexually explicit language in chatting is permitted, unless Memorial Day is enacted.",
+        "correct": "use",
+        "options": ["use","way","avoidance","prohibition"]
+    },
+    {
+        "sentence": "The act of passing laws regarding narcotics is ____.",
+        "correct": "prohibited",
+        "options": ["prohibited","encouraged","allowed","supported"]
+    },
+    {
+        "sentence": "Pardons shall only be individually and carried out by a vote of the ____.",
+        "correct": "Semblæ",
+        "options": ["Semblæ","House","Secretariats","Agora"]
+    },
+    {
+        "sentence": "Agencies, organisations, individuals can ____ support the Militia through material, financial, and morale contributions.",
+        "correct": "voluntarily",
+        "options": ["voluntarily","forcibly","illegally","secretly"]
+    },
+    {
+        "sentence": "The creation of literary and artistic works are ____ supported.",
+        "correct": "highly",
+        "options": ["highly","barely","rarely","never"]
+    },
+    {
+        "sentence": "Proposals for ____ in all aspects of the organisation shall be encouraged.",
+        "correct": "changes",
+        "options": ["changes","stagnation","decline","regression"]
+    },
+    {
+        "sentence": "The organisation ____ game piracy.",
+        "correct": "supports",
+        "options": ["supports","condemns","ignores","rejects"]
+    },
+    {
+        "sentence": "Any intellectual properties are welcomed to be shared to the organisation, preferably ____.",
+        "correct": "legal",
+        "options": ["legal","illegal","pirated","stolen"]
+    },
+    {
+        "sentence": "Prioritise models that can be replicated quickly, at ____ costs, have a great impact on life, and bring practical benefits to people.",
+        "correct": "reasonable",
+        "options": ["reasonable","exorbitant","high","low"]
+    },
+    {
+        "sentence": "The establishment, membership, or funding of armed organisations without ____ from The Secretariats is prohibited.",
+        "correct": "authorisation",
+        "options": ["authorisation","ping","letter","message"]
+    },
+    {
+        "sentence": "Conducting warfare using sexually explicit images is ____.",
+        "correct": "prohibited",
+        "options": ["prohibited","encouraged","allowed","supported"]
+    },
+    {
+        "sentence": "Conducting warfare involving bloody media is ____.",
+        "correct": "prohibited",
+        "options": ["prohibited","prefered","allowed","supported"]
+    },
+    {
+        "sentence": "The establishment of ____ is prohibited.",
+        "correct": "colonies",
+        "options": ["colonies","provinces","districts","wards"]
+    },
+    {
+        "sentence": "All disputes should first be resolved through ____ negotiation and dialogue.",
+        "correct": "peaceful",
+        "options": ["peaceful","violent","aggressive","hostile"]
+    },
+    {
+        "sentence": "Martial law is ____.",
+        "correct": "prohibited",
+        "options": ["prohibited","encouraged","allowed","supported"]
+    },
+    {
+        "sentence": "The manipulation of any ____ agency is prohibited and vice versa.",
+        "correct": "news",
+        "options": ["news","government","official","public"]
+    },
+    {
+        "sentence": "News agencies must register their names with the General Secretary ____ publishing information.",
+        "correct": "before",
+        "options": ["before","after","during","while"]
+    },
+    {
+        "sentence": "The bots \"Mimu\", \"UnbelievaBoat\", \"Bankify\" and ____ on Discord constitute the economy of the organisation.",
+        "correct": "Bigbird",
+        "options": ["Bigbird","Disboard","Tatsu","Kiai"]
+    },
+    {
+        "sentence": "Everyone, whether a member of the organisation or not, is ____ to participate in the organisation's economy.",
+        "correct": "allowed",
+        "options": ["allowed","prohibited","encouraged","discouraged"]
+    },
+    {
+        "sentence": "Bidding in any form ____ than direct appointment is prohibited.",
+        "correct": "other",
+        "options": ["other","similar","higher","equal"]
+    },
+    {
+        "sentence": "All books are ____ to be circulated.",
+        "correct": "allowed",
+        "options": ["allowed","prohibited","restricted","banned"]
+    },
+    {
+        "sentence": "Monopolies are ____.",
+        "correct": "blocked",
+        "options": ["blocked","funded","allowed","supported"]
+    },
+    {
+        "sentence": "The Treasury shall only issue bonds paid by TPO's ____ currencies, and the interest rate must be at least 0.2% per year.",
+        "correct": "virtual",
+        "options": ["virtual","physical","real","bird"]
+    },
+    {
+        "sentence": "The General Secretary 2 is responsible for training and issuing ____ to auction practitioners.",
+        "correct": "certificates",
+        "options": ["certificates","licenses","permissions","documents"]
+    },
+    {
+        "sentence": "When multiple assets are auctioned simultaneously, those assets must be identical and share the same starting ____.",
+        "correct": "price",
+        "options": ["price","value","cost","worth"]
+    },
+    {
+        "sentence": "The actual starting price for an auction shall be the starting price of one asset ____ by the number of assets.",
+        "correct": "multiplied",
+        "options": ["multiplied","added","divided","subtracted"]
+    },
+    {
+        "sentence": "Auctioning of assets sold in stores managed by the ____ is prohibited.",
+        "correct": "organisation",
+        "options": ["organisation","House","Agora","Semblæ"]
+    },
+    {
+        "sentence": "When a person has admitted to being a witness and has taken an oath but then refuses to testify, they shall be ____.",
+        "correct": "fined",
+        "options": ["fined","jailed","pardoned","released"]
+    },
+    {
+        "sentence": "The Court does not accept submitting or withdrawing lawsuit petition documents on Sundays and ____ New Year holidays.",
+        "correct": "Lunar",
+        "options": ["Lunar","Birthday","Happy","Christmas"]
+    },
+    {
+        "sentence": "SimBraille is the official font for documents written in ____.",
+        "correct": "Braille",
+        "options": ["Braille","Morse","Sign","Moon"]
+    },
+    {
+        "sentence": "Everyone ____ be in a province to be properly represented in the government",
+        "correct": "must",
+        "options": ["must","should","can","might"]
+    }
+]

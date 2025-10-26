@@ -1,0 +1,24 @@
+{
+    "win": [
+      "🎉 You called it! That’s a clean win — fortune favors the bold.",
+      "🪙🪙 Boom! Two matching coins just made you richer!",
+      "✅ Nailed it! The odds bent in your favor this time.",
+      "💰 You guessed right and walked away with the winnings!",
+      "🤑 Winner! Your coin call was on point. Sweet payout!"
+    ],
+    "lose": [
+      "❌ Oof, tough luck — the coins weren’t feeling generous.",
+      "😬 No match this time. Maybe the coin gods are sleeping?",
+      "📉 You lost the bet — but hey, at least you played!",
+      "🙈 Not your lucky flip... the coins disagree with your call.",
+      "🪙 Wrong call! The flip flipped on you."
+    ],
+    "neutral": [
+      "⚖️ Triple match! All coins show the same face — it's a push!",
+      "🪙🪙🪙 Whoa! All three coins matched. No one wins, no one loses.",
+      "😲 A rare triple! This round's a draw.",
+      "🔁 It’s a standoff — three of a kind! Balance unchanged.",
+      "😮 All coins landed the same — the universe says 'try again'."
+    ]
+  }
+  
