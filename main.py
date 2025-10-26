@@ -1,16 +1,31 @@
 import os
 import asyncio
 import argparse
+import threading
 import discord
 import json
 from discord.ext import commands
 from dotenv import load_dotenv
+from flask import Flask
 from database.db import MongoDatabase
 from utils.config import Config
 from utils.logger import setup_logger
 
 # Load environment variables
 load_dotenv()
+
+
+# --- Web server setup ---
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running!", 200
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
 
 # Setup logging
 logger = setup_logger()
@@ -114,7 +129,8 @@ async def main():
             token = os.getenv('DISCORD_TOKEN')
             if not token:
                 raise ValueError("DISCORD_TOKEN environment variable is not set")
-            await bot.start(token)
+            threading.Thread(target=run_web).start()    # Start web server
+            await bot.start(token)                      # Start bot
     except KeyboardInterrupt:
         logger.info("Received shutdown signal - initiating graceful shutdown...")
         await bot.close()
