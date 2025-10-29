@@ -13,11 +13,88 @@ COLOR_OPTIONS = {
     'orange': '🟧'
 }
 
+
+
+class ColorButton(discord.ui.Button):
+    def __init__(self, user: discord.User, answer: str, correct: bool):
+        super().__init__(style=discord.ButtonStyle.primary, label=answer)
+        self.user = user
+        self.answer = answer
+        self.correct = correct
+
+    async def callback(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+
+        view = self.view
+        if not isinstance(view, ColorView):
+            return
+        if view.is_finished():
+            return
+        if interaction.user.id != self.user.id:
+            return  # Ignore clicks from others
+
+        # Handle correct / incorrect
+        if self.correct:
+            reward = random.randint(10, 20)
+            await view.user_repository.add_balance(view.user, reward)
+            embed = discord.Embed(
+                title="✅ Correct Answer!",
+                description=f"You earned **{reward} TPB!**",
+                color=discord.Color.green()
+            )
+        else:
+            embed = discord.Embed(
+                title="❌ Wrong Answer!",
+                description=f"The correct answer was **{view.correct_answer.title()}**.",
+                color=discord.Color.red()
+            )
+
+        # Disable all buttons
+        for child in view.children:
+            if isinstance(child, discord.ui.Button):
+                child.disabled = True
+
+        await interaction.edit_original_response(embed=embed, view=view)
+        view.stop()
+
+
+class ColorView(discord.ui.View):
+    def __init__(self, user_repository, user, correct_answer: str):
+        super().__init__(timeout=30)
+        self.user_repository = user_repository
+        self.user = user
+        self.correct_answer = correct_answer
+        self.message: discord.Message | None = None
+
+        # Add buttons for A, B, C
+        options = ["Blue", "Green", "Orange"]
+        for opt in options:
+            is_correct = opt.lower() == correct_answer
+            self.add_item(ColorButton(user, f"{opt}", is_correct))
+
+    async def on_timeout(self):
+        for child in self.children:
+            if isinstance(child, discord.ui.Button):
+                child.disabled = True
+        try:
+            if isinstance(self.message, discord.Message):
+                await self.message.edit(
+                    embed=discord.Embed(
+                        title="⏱️ Time's Up!",
+                        description="You took too long to answer.",
+                        color=discord.Color.dark_grey()
+                    ),
+                    view=self
+                )
+        except:
+            pass
+
 class LawButton(discord.ui.Button):
-    def __init__(self, answer: str, correct: bool):
+    def __init__(self, user:User, answer: str, correct: bool):
         super().__init__(style=discord.ButtonStyle.primary, label=answer)
         self.correct = correct
         self.answer = answer
+        self.user = user
 
     async def callback(self, interaction: discord.Interaction):
         await interaction.response.defer()
@@ -26,6 +103,8 @@ class LawButton(discord.ui.Button):
         if not isinstance(view, LawView):
             return
         if view.is_finished():
+            return
+        if interaction.user.id != self.user.id:
             return
 
         if self.correct:
@@ -62,7 +141,7 @@ class LawView(discord.ui.View):
         
         # Add buttons for each option
         for option in options:
-            self.add_item(LawButton(option, option == correct_answer))
+            self.add_item(LawButton(user, option, option == correct_answer))
 
     async def on_timeout(self):
         for button in self.children:
@@ -131,52 +210,38 @@ class Work(commands.Cog):
         try:
             await interaction.response.defer()
 
-            # Check if user is registered
+            # Check registration
             user = await self.user_repository.get_user(interaction.user.id)
             if not user:
-                await interaction.response.send_message(
+                await interaction.followup.send(
                     "You need to register first! Use `/register`",
                     ephemeral=True
                 )
                 return
 
-            # Generate random color and create options
+            # Randomly pick color
             correct_color = random.choice(list(COLOR_OPTIONS.keys()))
             color_emoji = COLOR_OPTIONS[correct_color]
 
-            # Create message with options
-            message = f"What is this color? {color_emoji}\n\nA. Blue\nB. Green\nC. Orange"
-            await interaction.followup.send(message)
+            # Build embed
+            embed = discord.Embed(
+                title="🎨 Guess the Color!",
+                description=f"What is this color? {color_emoji}",
+                color=discord.Color.blue()
+            )
 
-            def check(m):
-                return (m.author == interaction.user and 
-                       m.channel == interaction.channel and 
-                       m.content.upper() in ['A', 'B', 'C'])
-
-            try:
-                msg = await self.bot.wait_for('message', timeout=30.0, check=check)
-                
-                # Convert answer to color
-                answer_map = {'A': 'blue', 'B': 'green', 'C': 'orange'}
-                user_answer = answer_map[msg.content.upper()]
-
-                if user_answer == correct_color:
-                    # Generate random reward between 10 and 20
-                    reward = random.randint(10, 20)
-                    await self.user_repository.add_balance(user, reward)
-                    await interaction.followup.send(f"🎉 Correct! You earned {reward} TPB!")
-                else:
-                    await interaction.followup.send(f"❌ Sorry, that's incorrect. The color was {correct_color}.")
-
-            except TimeoutError:
-                await interaction.followup.send("Time's up! You took too long to answer.")
+            # Create view
+            view = ColorView(self.user_repository, user, correct_color)
+            await interaction.followup.send(embed=embed, view=view)
+            view.message = await interaction.original_response()
 
         except Exception as e:
             if not interaction.response.is_done():
-                await interaction.followup.send(
+                await interaction.response.send_message(
                     "An error occurred while playing the game. Please try again.",
                     ephemeral=True
                 )
+
 
     @app_commands.command(name="law", description="Test your knowledge of the laws and earn TPB! (cooldown: 16 minutes)")
     @app_commands.checks.cooldown(1, 960)  # 16 minutes cooldown
