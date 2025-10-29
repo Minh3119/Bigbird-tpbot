@@ -16,10 +16,9 @@ COLOR_OPTIONS = {
 
 
 class ColorButton(discord.ui.Button):
-    def __init__(self, user: discord.User, answer: str, correct: bool):
-        super().__init__(style=discord.ButtonStyle.primary, label=answer)
+    def __init__(self, user: discord.User, label: str, correct: bool, style: discord.ButtonStyle):
+        super().__init__(style=style, label=label)
         self.user = user
-        self.answer = answer
         self.correct = correct
 
     async def callback(self, interaction: discord.Interaction):
@@ -31,9 +30,9 @@ class ColorButton(discord.ui.Button):
         if view.is_finished():
             return
         if interaction.user.id != self.user.id:
-            return  # Ignore clicks from others
+            return  # ignore others
 
-        # Handle correct / incorrect
+        # Handle answer
         if self.correct:
             reward = random.randint(10, 20)
             await view.user_repository.add_balance(view.user, reward)
@@ -66,11 +65,20 @@ class ColorView(discord.ui.View):
         self.correct_answer = correct_answer
         self.message: discord.Message | None = None
 
-        # Add buttons for A, B, C
-        options = ["Blue", "Green", "Orange"]
-        for opt in options:
-            is_correct = opt.lower() == correct_answer
-            self.add_item(ColorButton(user, f"{opt}", is_correct))
+        # Define options with their consistent button styles
+        button_data = [
+            ("Blue", discord.ButtonStyle.primary),
+            ("Green", discord.ButtonStyle.success),
+            ("Orange", discord.ButtonStyle.danger),
+        ]
+
+        # Shuffle the order of buttons (not the style mapping)
+        random.shuffle(button_data)
+
+        # Add buttons
+        for label, style in button_data:
+            is_correct = label.lower() == correct_answer
+            self.add_item(ColorButton(user, label, is_correct, style))
 
     async def on_timeout(self):
         for child in self.children:
