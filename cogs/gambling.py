@@ -66,15 +66,29 @@ class GamblingCog(commands.Cog):
             win = True
 
         if win:
+            winnings = bet_amount
+            tax = int(winnings * 0.1)  # Calculate 10% tax
+            net_winnings = winnings - tax
+
             if currency == "tpb":
-                user.tpb_amount += bet_amount
+                user.tpb_amount += net_winnings
             else:
-                user.tpg_amount += bet_amount
+                user.tpg_amount += net_winnings
+
+            # Transfer tax to bot's account
+            bot_user = await self.user_repository.get_user(self.bot.user.id)
+            if bot_user:
+                if currency == "tpb":
+                    bot_user.tpb_amount += tax
+                else:
+                    bot_user.tpg_amount += tax
+                await self.user_repository.save_user(bot_user)
         else:
             if currency == "tpb":
                 user.tpb_amount -= bet_amount
             else:
                 user.tpg_amount -= bet_amount
+
         await self.user_repository.save_user(user)
 
         # Create a more polished response with an embed
@@ -135,20 +149,26 @@ class GamblingCog(commands.Cog):
         if heads == 3 or tails == 3:
             outcome = random.choice(self.twoup_outcomes['neutral'])
             result = "neutral"
-        elif guess == "two heads" and heads == 2:
+        elif (guess == "two heads" and heads == 2) or (guess == "two tails" and tails == 2):
             outcome = random.choice(self.twoup_outcomes['win'])
             result = "win"
+            winnings = bet_amount
+            tax = int(winnings * 0.1)  # Calculate 10% tax
+            net_winnings = winnings - tax
+
             if currency == "tpb":
-                user.tpb_amount += bet_amount
+                user.tpb_amount += net_winnings
             else:
-                user.tpg_amount += bet_amount
-        elif guess == "two tails" and tails == 2:
-            outcome = random.choice(self.twoup_outcomes['win'])
-            result = "win"
-            if currency == "tpb":
-                user.tpb_amount += bet_amount
-            else:
-                user.tpg_amount += bet_amount
+                user.tpg_amount += net_winnings
+
+            # Transfer tax to bot's account
+            bot_user = await self.user_repository.get_user(self.bot.user.id)
+            if bot_user:
+                if currency == "tpb":
+                    bot_user.tpb_amount += tax
+                else:
+                    bot_user.tpg_amount += tax
+                await self.user_repository.save_user(bot_user)
         else:
             outcome = random.choice(self.twoup_outcomes['lose'])
             result = "lose"
