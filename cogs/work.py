@@ -212,6 +212,29 @@ class Work(commands.Cog):
                     ephemeral=True
                 )
 
+    @app_commands.command(name="balance", description="Check your TPB balance")
+    @app_commands.checks.cooldown(1, 3)  # 3 seconds cooldown
+    async def balance(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+
+        # Fetch user
+        user = await self.user_repository.get_user(interaction.user.id)
+        if not user:
+            await interaction.followup.send(
+                "You need to register first! Use `/register`",
+                ephemeral=True
+            )
+            return
+
+        # Create embed with balance info
+        embed = discord.Embed(
+            title=f"💰 {interaction.user.name}'s Balance",
+            description=f"You have **{user.balance} TPB**.",
+            color=discord.Color.gold()
+        )
+
+        await interaction.followup.send(embed=embed)
+
     @app_commands.command(name="color", description="Guess the color and earn TPB! (cooldown: 6 minutes)")
     @app_commands.checks.cooldown(1, 360)  # 6 minutes cooldown
     async def color_slash_command(self, interaction: discord.Interaction):

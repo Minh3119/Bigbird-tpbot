@@ -23,7 +23,7 @@ class General(commands.Cog):
         )
         await interaction.response.send_message(help_text)
 
-    @app_commands.command(name="cooldowns", description="View cooldown status for all bot commands.")
+    #@app_commands.command(name="cooldowns", description="View cooldown status for all bot commands.")
     async def cooldowns(self, interaction: Interaction):
         """Display all command cooldowns and their remaining durations."""
         await interaction.response.defer()

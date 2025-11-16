@@ -31,7 +31,7 @@
     },
     {
         "sentence": "The official demonym is ____.",
-        "correct": "absolute",
+        "correct": "Traophs",
         "options": ["Traophs","Traophese","Traophians","Traophites"]
     },
     {
@@ -53,11 +53,6 @@
         "sentence": "The General Secretary has the final authority over every official document, ____ adopted by the Semblæ.",
         "correct": "unless",
         "options": ["unless","including","either","except"]
-    },
-    {
-        "sentence": "No nondisclosure documents are allowed, except the ____'s.",
-        "correct": "army",
-        "options": ["army","government","leader","Semblæ"]
     },
     {
         "sentence": "Members of The Secretariats must be born in the territory of the ____ Republic of Vietnam.",
