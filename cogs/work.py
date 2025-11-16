@@ -35,10 +35,10 @@ class ColorButton(discord.ui.Button):
         # Handle answer
         if self.correct:
             reward = random.randint(10, 20)
-            await view.user_repository.add_tpb(view.user, reward)
+            await view.user_repository.add_tpg(view.user, reward)
             embed = discord.Embed(
                 title="✅ Correct Answer!",
-                description=f"You earned **{reward} TPB!**",
+                description=f"You earned **{reward} TPG!**",
                 color=discord.Color.green()
             )
         else:
