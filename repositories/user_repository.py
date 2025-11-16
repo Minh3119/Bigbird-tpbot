@@ -16,7 +16,12 @@ class UserRepository:
         """Save or update a user in the database"""
         await self.db.update_user_data(user.id, user.to_dict())
 
-    async def add_balance(self, user: User, amount: int) -> None:
-        """Add to user's balance and update in database"""
-        user.balance += amount
+    async def add_tpb(self, user: User, amount: int) -> None:
+        """Add to user's TPB amount and update in database"""
+        user.tpb_amount += amount
+        await self.save_user(user)
+
+    async def add_tpg(self, user: User, amount: int) -> None:
+        """Add to user's TPG amount and update in database"""
+        user.tpg_amount += amount
         await self.save_user(user)

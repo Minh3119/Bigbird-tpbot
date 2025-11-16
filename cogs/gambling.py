@@ -22,7 +22,7 @@ class GamblingCog(commands.Cog):
             self.twoup_outcomes = json.load(f)
     
     @app_commands.command(name='hilo', description='Play hi-lo / tài xỉu')
-    async def hi_lo(self, interaction: discord.Interaction, guess:Literal["high","low"], bet_amount: int):
+    async def hi_lo(self, interaction: discord.Interaction, guess:Literal["high","low"], bet_amount: int, currency: Literal["tpb", "tpg"]):
         await interaction.response.defer()
 
         # Check if user is registered
@@ -34,15 +34,15 @@ class GamblingCog(commands.Cog):
             )
             return
 
-        # Ensure user has a balance (default to 1000)
-        balance = user.balance
+        # Ensure user has the chosen currency amount
+        currency_amount = user.tpb_amount if currency == "tpb" else user.tpg_amount
 
         # Validate bet amount
         if bet_amount <= 0:
             await interaction.followup.send("Your bet must be greater than 0.", ephemeral=True)
             return
-        if bet_amount > balance:
-            await interaction.followup.send(f"You don't have enough balance to make that bet.", ephemeral=True)
+        if bet_amount > currency_amount:
+            await interaction.followup.send(f"You don't have enough {currency.upper()} to make that bet.", ephemeral=True)
             return
 
         # Roll 3 dice
@@ -66,9 +66,15 @@ class GamblingCog(commands.Cog):
             win = True
 
         if win:
-            user.balance += bet_amount
+            if currency == "tpb":
+                user.tpb_amount += bet_amount
+            else:
+                user.tpg_amount += bet_amount
         else:
-            user.balance -= bet_amount
+            if currency == "tpb":
+                user.tpb_amount -= bet_amount
+            else:
+                user.tpg_amount -= bet_amount
         await self.user_repository.save_user(user)
 
         # Create a more polished response with an embed
@@ -94,7 +100,7 @@ class GamblingCog(commands.Cog):
         await interaction.followup.send(embed=embed)
 
     @app_commands.command(name='two-up', description='Play two-up / chẵn lẻ')
-    async def two_up(self, interaction: discord.Interaction, guess:Literal["two heads","two tails"], bet_amount: int):
+    async def two_up(self, interaction: discord.Interaction, guess:Literal["two heads","two tails"], bet_amount: int, currency: Literal["tpb", "tpg"]):
         await interaction.response.defer()
 
         # Check if user is registered
@@ -106,15 +112,15 @@ class GamblingCog(commands.Cog):
             )
             return
         
-        # Ensure user has a balance (default to 1000)
-        balance = user.balance
+        # Ensure user has the chosen currency amount
+        currency_amount = user.tpb_amount if currency == "tpb" else user.tpg_amount
 
         # Validate bet amount
         if bet_amount <= 0:
             await interaction.followup.send("Your bet must be greater than 0.", ephemeral=True)
             return
-        if bet_amount > balance:
-            await interaction.followup.send(f"You don't have enough balance to make that bet.", ephemeral=True)
+        if bet_amount > currency_amount:
+            await interaction.followup.send(f"You don't have enough {currency.upper()} to make that bet.", ephemeral=True)
             return
         
          # Flip 3 coins
@@ -132,15 +138,24 @@ class GamblingCog(commands.Cog):
         elif guess == "two heads" and heads == 2:
             outcome = random.choice(self.twoup_outcomes['win'])
             result = "win"
-            user.balance += bet_amount
+            if currency == "tpb":
+                user.tpb_amount += bet_amount
+            else:
+                user.tpg_amount += bet_amount
         elif guess == "two tails" and tails == 2:
             outcome = random.choice(self.twoup_outcomes['win'])
             result = "win"
-            user.balance += bet_amount
+            if currency == "tpb":
+                user.tpb_amount += bet_amount
+            else:
+                user.tpg_amount += bet_amount
         else:
             outcome = random.choice(self.twoup_outcomes['lose'])
             result = "lose"
-            user.balance -= bet_amount
+            if currency == "tpb":
+                user.tpb_amount -= bet_amount
+            else:
+                user.tpg_amount -= bet_amount
 
         # Build the embed
         embed = discord.Embed(

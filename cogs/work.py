@@ -35,7 +35,7 @@ class ColorButton(discord.ui.Button):
         # Handle answer
         if self.correct:
             reward = random.randint(10, 20)
-            await view.user_repository.add_balance(view.user, reward)
+            await view.user_repository.add_tpb(view.user, reward)
             embed = discord.Embed(
                 title="✅ Correct Answer!",
                 description=f"You earned **{reward} TPB!**",
@@ -117,7 +117,7 @@ class LawButton(discord.ui.Button):
 
         if self.correct:
             reward = random.randint(40, 60)
-            await view.user_repository.add_balance(view.user, reward)
+            await view.user_repository.add_tpb(view.user, reward)
             embed = discord.Embed(
                 title="✅ Correct Answer!",
                 description=f"You earned {reward} TPB!",
@@ -229,7 +229,7 @@ class Work(commands.Cog):
         # Create embed with balance info
         embed = discord.Embed(
             title=f"💰 {interaction.user.name}'s Balance",
-            description=f"You have **{user.balance} TPB**.",
+            description=f"You have **{user.tpb_amount} TPB** and **{user.tpg_amount} TPG**.",
             color=discord.Color.gold()
         )
 

@@ -6,7 +6,8 @@ class User:
     id: int
     name: str
     registered_at: float
-    balance: int = 0
+    tpb_amount: int = 0
+    tpg_amount: int = 0
 
     @classmethod
     def create(cls, id: int, name: str, registered_at: float) -> 'User':
@@ -14,7 +15,8 @@ class User:
             id=id,
             name=name,
             registered_at=registered_at,
-            balance=0
+            tpb_amount=0,
+            tpg_amount=0
         )
 
     def to_dict(self) -> dict:
@@ -23,7 +25,8 @@ class User:
             '_id': self.id,
             'name': self.name,
             'registered_at': self.registered_at,
-            'balance': self.balance
+            'tpb_amount': self.tpb_amount,
+            'tpg_amount': self.tpg_amount
         }
 
     @classmethod
@@ -36,5 +39,6 @@ class User:
             id=data['_id'],
             name=data['name'],
             registered_at=data['registered_at'],
-            balance=data.get('balance', 0)
+            tpb_amount=data.get('tpb_amount', 0),
+            tpg_amount=data.get('tpg_amount', 0)
         )
