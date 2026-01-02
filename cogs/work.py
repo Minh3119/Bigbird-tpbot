@@ -212,7 +212,7 @@ class Work(commands.Cog):
                     ephemeral=True
                 )
 
-    @app_commands.command(name="balance", description="Check your TPB balance")
+    @app_commands.command(name="balance", description="Check your balance")
     @app_commands.checks.cooldown(1, 3)  # 3 seconds cooldown
     async def balance(self, interaction: discord.Interaction):
         await interaction.response.defer()
@@ -235,7 +235,7 @@ class Work(commands.Cog):
 
         await interaction.followup.send(embed=embed)
 
-    @app_commands.command(name="color", description="Guess the color and earn TPB! (cooldown: 6 minutes)")
+    @app_commands.command(name="color", description="Guess the color and earn TPG! (cooldown: 6 minutes)")
     @app_commands.checks.cooldown(1, 360)  # 6 minutes cooldown
     async def color_slash_command(self, interaction: discord.Interaction):
         try:

@@ -50,7 +50,7 @@
         "options": ["90","85","100","95"]
     },
     {
-        "sentence": "The General Secretary has the final authority over every official document, ____ adopted by the Semblæ.",
+        "sentence": "The General Secretary has the final authority over every official document, ____ adopted by a vote.",
         "correct": "unless",
         "options": ["unless","including","either","except"]
     },
@@ -63,11 +63,6 @@
         "sentence": "The ____ has the right to hold inter-organisational elections.",
         "correct": "House",
         "options": ["House","Semblæ","Secretariats","Agora"]
-    },
-    {
-        "sentence": "The House shall only hold an election session when it's approved by members of the House (who are citizens of The ____) using the MAJ voting method.",
-        "correct": "Secretariats",
-        "options": ["Secretariats","Agora","Semblæ","House"]
     },
     {
         "sentence": "____ members are subject to inspection and supervision by the organisation.",
@@ -128,11 +123,6 @@
         "sentence": "The Semblæ has the right to lift a ban on \"face-to-face meetings for businesses\" if it reaches a two-____ approval vote.",
         "correct": "thirds",
         "options": ["thirds","quarters","halves","fifths"]
-    },
-    {
-        "sentence": "The ____ is adopted indefinitely unless the General Secretary wants to stop using it.",
-        "correct": "Charter",
-        "options": ["Charter","Law","Decision","Document"]
     },
     {
         "sentence": "Every ____ of holding any positions in the organisation is voted in the Semblæ.",
@@ -383,5 +373,10 @@
         "sentence": "Everyone ____ be in a province to be properly represented in the government",
         "correct": "must",
         "options": ["must","should","can","might"]
+    },
+    {
+        "sentence": "The Electoral College is used for electing the General Secretary, General Secretary 2 and General Economic ____ Prevention.",
+        "correct": "terrorism",
+        "options": ["terrorism","fraud","vulnerability","depression"]
     }
 ]
